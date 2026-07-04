@@ -16,7 +16,7 @@
     "primary": {
       "type": "button",
       "label": "Присоединиться",
-      "href": "https://discord.gg/reverie"
+      "href": "https://discord.gg/SpN4nmhu8R"
     }
   },
   "navigation": {
@@ -103,7 +103,9 @@
   },
   "footer": {
     "socials": {
-      "discord": "https://discord.gg/reverie"
+      "discord": "https://discord.gg/SpN4nmhu8R",
+      "telegram": "https://t.me/The_ReVerie_News",
+      "youtube": "https://youtube.com/@ReVerie-News"
     }
   }
 }
