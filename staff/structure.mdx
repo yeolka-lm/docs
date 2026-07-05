@@ -4,79 +4,40 @@ sidebarTitle: "Структура"
 description: "Иерархическая структура компании ReVerie: подчинённость Основателя, Управляющего директора, C-level руководителей и всех отделов персонала."
 ---
 
-Полная иерархия ReVerie: от Основателя до стажёров. Ниже — визуальная схема подчинённости, а затем детализация по каждому направлению.
+Полная иерархия ReVerie: от Основателя до стажёров. Ниже — структурированное представление подчинённости, а затем детализация по каждому направлению.
 
 ## Схема подчинённости
 
-```mermaid
-%%{init: {'flowchart': {'defaultRenderer': 'elk'}, 'theme':'base'}}%%
-flowchart TB
-  F[Основатель]:::top
-  MD[Управляющий директор]:::top
-  SA[Советник владельца]:::top
+<Steps>
+  <Step title="Основатель" icon="crown">
+    Владелец проекта. Определяет стратегию и обладает правом вето.
 
-  F --> MD
-  MD --> SA
-  MD --> COO
-  MD --> CMO
-  MD --> CFO
-  MD --> CSO
-  MD --> HRD
+    ↓ передаёт оперативное управление
+  </Step>
+  <Step title="Управляющий директор" icon="user-tie">
+    Оперативное руководство компанией. Взаимодействует с **Советником владельца** и координирует пятерых C-level руководителей.
 
-  COO[COO — Операции]:::clevel
-  CMO[CMO — Развитие]:::clevel
-  CFO[CFO — Финансы]:::clevel
-  CSO[CSO — Безопасность]:::clevel
-  HRD[HRD — Персонал]:::clevel
-
-  COO --> ARB[Арбитраж]
-  COO --> CUR[Кураторы проектов]
-  COO --> PRT[Партнёры]
-  COO --> MPF[Основатели мини-проектов]
-
-  CMO --> MEDIA[Глава медиа]:::lead
-  MEDIA --> PROD[Продюсер · 1–2]
-  MEDIA --> EDIT[Редактор · 2–3]
-  MEDIA --> CC[Контент-креатор · 5–10]
-  MEDIA --> OP[Оператор · 2–3]
-  MEDIA --> DES[Дизайнер · 3–5]
-  MEDIA --> INT_M[Стажёр медиа · до 5]:::intern
-
-  HRD --> MCM[Менеджмент MC]:::dept
-  HRD --> DCH[Глава персонала Discord]:::lead
-
-  MCM --> MCL[Глава персонала Minecraft]:::lead
-  MCM --> TCL[Глава техсостава]:::lead
-
-  MCL --> MCA[Администратор Minecraft · 3–5]
-  MCA --> MCMOD[Модератор Minecraft · 10–20]
-  MCMOD --> MCH[Помощник Minecraft · 15–25]
-  MCH --> MCI[Стажёр Minecraft · до 10]:::intern
-  MCL --> MCID[Команда внутренних дел Minecraft]:::dept
-  MCID --> MCINS[Инспектор Minecraft · 2–3]
-  MCID --> MCAN[Аналитик Minecraft · 1–2]
-
-  TCL --> ARC[Архитектор · 2–3]
-  TCL --> BLD[Билдер · 5–10]
-  TCL --> DEV[Разработчик · 5–10]
-  TCL --> AUD[Технический аудитор · 2–3]
-  TCL --> TST[Тестировщик · 3–5]
-  TCL --> DEVI[Стажёр DEV · до 10]:::intern
-
-  DCH --> DCA[Администратор Discord · 3–5]
-  DCA --> DCMOD[Модератор Discord · 10–20]
-  DCMOD --> DCH2[Помощник Discord · 20–30]
-  DCH2 --> DCI[Стажёр Discord · до 15]:::intern
-  DCH --> DCID[Команда внутренних дел Discord]:::dept
-  DCID --> DCAN[Аналитик Discord · 1–2]
-  DCID --> DCINS[Инспектор Discord · 2–3]
-
-  classDef top fill:#ef7025,stroke:#ef7025,color:#fff,font-weight:bold;
-  classDef clevel fill:#4fa1ab,stroke:#4fa1ab,color:#fff,font-weight:bold;
-  classDef lead fill:#eec9bc,stroke:#ef7025,color:#222;
-  classDef dept fill:#fff,stroke:#4fa1ab,color:#222,stroke-dasharray: 4 3;
-  classDef intern fill:#f6f6f6,stroke:#bbb,color:#666,font-style:italic;
-```
+    ↓ распределяет направления между
+  </Step>
+  <Step title="C-level руководители" icon="users-gear">
+    | Руководитель | Подчинённые направления |
+    | --- | --- |
+    | **COO** — Операции | Арбитраж · Кураторы · Партнёры · Основатели мини-проектов |
+    | **CMO** — Развитие | Глава медиа и вся медиа-команда |
+    | **CFO** — Финансы | Финансовое планирование и отчётность |
+    | **CSO** — Безопасность | Информационная и организационная безопасность |
+    | **HRD** — Персонал | Менеджмент MC, техсостав, персонал Discord |
+  </Step>
+  <Step title="Главы направлений" icon="sitemap">
+    - **Глава медиа** (под CMO) — продюсеры, редакторы, креаторы, операторы, дизайнеры
+    - **Глава персонала Minecraft** (под HRD) — линия модерации MC \+ внутренние дела
+    - **Глава техсостава** (под HRD) — архитекторы, билдеры, разработчики, аудиторы, тестировщики
+    - **Глава персонала Discord** (под HRD) — линия модерации Discord \+ внутренние дела
+  </Step>
+  <Step title="Линейный персонал и стажёры" icon="user-group">
+    Администраторы → Модераторы → Помощники → Стажёры. Детальная численность каждой роли — в разделах ниже.
+  </Step>
+</Steps>
 
 ## Верхний уровень
 
