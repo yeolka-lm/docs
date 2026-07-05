@@ -4,53 +4,196 @@ sidebarTitle: "Структура"
 description: "Иерархическая структура компании ReVerie: подчинённость Основателя, Управляющего директора, C-level руководителей и всех отделов персонала."
 ---
 
-Ниже представлена итоговая иерархическая структура компании ReVerie. Структура оформлена в виде дерева с символами, показывающими уровни подчинённости.
+Полная иерархия ReVerie: от Основателя до стажёров. Ниже — визуальная схема подчинённости, а затем детализация по каждому направлению.
 
-## Организационная структура
+## Схема подчинённости
 
-```text
-Компания ReVerie
-├── Основатель
-├── Управляющий директор
-├── Советник владельца
-├── COO (Директор по операциям)
-│   ├── Арбитраж
-│   ├── Кураторы проектов
-│   ├── Партнёры
-│   └── Основатели мини-проектов
-├── CMO (Директор по развитию)
-│   └── Глава медиа
-│       ├── Продюсер (1–2)
-│       ├── Редактор (2–3)
-│       ├── Контент-креатор (5–10)
-│       ├── Оператор (2–3)
-│       ├── Дизайнер (3–5)
-│       └── Стажёр медиа (до 5)
-├── CFO (Директор по финансам)
-├── CSO (Директор по безопасности)
-└── HRD (Директор по персоналу)
-    ├── Менеджмент MC
-    │   ├── Глава персонала Minecraft
-    │   │   ├── Администратор Minecraft (3–5)
-    │   │   │   └── Модератор Minecraft (10–20)
-    │   │   │       └── Помощник Minecraft (15–25)
-    │   │   │           └── Стажёр Minecraft (до 10)
-    │   │   └── Команда внутренних дел Minecraft
-    │   │       ├── Инспектор Minecraft (2–3)
-    │   │       └── Аналитик Minecraft (1–2)
-    │   └── Глава техсостава
-    │       ├── Архитектор (2–3)
-    │       ├── Билдер (5–10)
-    │       ├── Разработчик (5–10)
-    │       ├── Технический аудитор (2–3)
-    │       ├── Тестировщик (3–5)
-    │       └── Стажёр DEV (до 10)
-    └── Глава персонала Discord
-        ├── Администратор Discord (3–5)
-        │   └── Модератор Discord (10–20)
-        │       └── Помощник Discord (20–30)
-        │           └── Стажёр Discord (до 15)
-        └── Команда внутренних дел Discord
-            ├── Аналитик Discord (1–2)
-            └── Инспектор Discord (2–3)
+```mermaid
+%%{init: {'flowchart': {'defaultRenderer': 'elk'}, 'theme':'base'}}%%
+flowchart TB
+  F[Основатель]:::top
+  MD[Управляющий директор]:::top
+  SA[Советник владельца]:::top
+
+  F --> MD
+  MD --> SA
+  MD --> COO
+  MD --> CMO
+  MD --> CFO
+  MD --> CSO
+  MD --> HRD
+
+  COO[COO — Операции]:::clevel
+  CMO[CMO — Развитие]:::clevel
+  CFO[CFO — Финансы]:::clevel
+  CSO[CSO — Безопасность]:::clevel
+  HRD[HRD — Персонал]:::clevel
+
+  COO --> ARB[Арбитраж]
+  COO --> CUR[Кураторы проектов]
+  COO --> PRT[Партнёры]
+  COO --> MPF[Основатели мини-проектов]
+
+  CMO --> MEDIA[Глава медиа]:::lead
+  MEDIA --> PROD[Продюсер · 1–2]
+  MEDIA --> EDIT[Редактор · 2–3]
+  MEDIA --> CC[Контент-креатор · 5–10]
+  MEDIA --> OP[Оператор · 2–3]
+  MEDIA --> DES[Дизайнер · 3–5]
+  MEDIA --> INT_M[Стажёр медиа · до 5]:::intern
+
+  HRD --> MCM[Менеджмент MC]:::dept
+  HRD --> DCH[Глава персонала Discord]:::lead
+
+  MCM --> MCL[Глава персонала Minecraft]:::lead
+  MCM --> TCL[Глава техсостава]:::lead
+
+  MCL --> MCA[Администратор Minecraft · 3–5]
+  MCA --> MCMOD[Модератор Minecraft · 10–20]
+  MCMOD --> MCH[Помощник Minecraft · 15–25]
+  MCH --> MCI[Стажёр Minecraft · до 10]:::intern
+  MCL --> MCID[Команда внутренних дел Minecraft]:::dept
+  MCID --> MCINS[Инспектор Minecraft · 2–3]
+  MCID --> MCAN[Аналитик Minecraft · 1–2]
+
+  TCL --> ARC[Архитектор · 2–3]
+  TCL --> BLD[Билдер · 5–10]
+  TCL --> DEV[Разработчик · 5–10]
+  TCL --> AUD[Технический аудитор · 2–3]
+  TCL --> TST[Тестировщик · 3–5]
+  TCL --> DEVI[Стажёр DEV · до 10]:::intern
+
+  DCH --> DCA[Администратор Discord · 3–5]
+  DCA --> DCMOD[Модератор Discord · 10–20]
+  DCMOD --> DCH2[Помощник Discord · 20–30]
+  DCH2 --> DCI[Стажёр Discord · до 15]:::intern
+  DCH --> DCID[Команда внутренних дел Discord]:::dept
+  DCID --> DCAN[Аналитик Discord · 1–2]
+  DCID --> DCINS[Инспектор Discord · 2–3]
+
+  classDef top fill:#ef7025,stroke:#ef7025,color:#fff,font-weight:bold;
+  classDef clevel fill:#4fa1ab,stroke:#4fa1ab,color:#fff,font-weight:bold;
+  classDef lead fill:#eec9bc,stroke:#ef7025,color:#222;
+  classDef dept fill:#fff,stroke:#4fa1ab,color:#222,stroke-dasharray: 4 3;
+  classDef intern fill:#f6f6f6,stroke:#bbb,color:#666,font-style:italic;
 ```
+
+## Верхний уровень
+
+<CardGroup cols={3}>
+  <Card title="Основатель" icon="crown" horizontal>
+    Владелец проекта. Определяет стратегию и ценности ReVerie.
+  </Card>
+
+  <Card title="Управляющий директор" icon="user-tie" horizontal>
+    Оперативное руководство всей компанией.
+  </Card>
+
+  <Card title="Советник владельца" icon="lightbulb" horizontal>
+    Консультативная роль при Основателе.
+  </Card>
+</CardGroup>
+
+## C-level руководители
+
+<CardGroup cols={2}>
+  <Card title="COO — Директор по операциям" icon="gears">
+    Арбитраж · Кураторы проектов · Партнёры · Основатели мини-проектов
+  </Card>
+
+  <Card title="CMO — Директор по развитию" icon="megaphone">
+    Курирует медиа-направление и внешние коммуникации.
+  </Card>
+
+  <Card title="CFO — Директор по финансам" icon="wallet">
+    Бюджеты, расчёты, финансовая отчётность.
+  </Card>
+
+  <Card title="CSO — Директор по безопасности" icon="shield">
+    Информационная и организационная безопасность.
+  </Card>
+
+  <Card title="HRD — Директор по персоналу" icon="users" horizontal>
+    Управляет всеми командами Minecraft, Discord и техсоставом.
+  </Card>
+</CardGroup>
+
+## Направление COO — Операции
+
+<AccordionGroup>
+  <Accordion title="Прямое подчинение COO" defaultOpen icon="sitemap">
+    - **Арбитраж** — независимый орган разрешения споров
+    - **Кураторы проектов** — сопровождение мини-проектов
+    - **Партнёры** — представители партнёрских проектов
+    - **Основатели мини-проектов** — авторы одобренных инициатив
+  </Accordion>
+</AccordionGroup>
+
+## Направление CMO — Медиа
+
+<AccordionGroup>
+  <Accordion title="Глава медиа" defaultOpen icon="clapperboard">
+    | Роль | Численность |
+    | --- | --- |
+    | Продюсер | 1–2 |
+    | Редактор | 2–3 |
+    | Контент-креатор | 5–10 |
+    | Оператор | 2–3 |
+    | Дизайнер | 3–5 |
+    | Стажёр медиа | до 5 |
+  </Accordion>
+</AccordionGroup>
+
+## Направление HRD — Персонал
+
+<Tabs>
+  <Tab title="Менеджмент MC">
+    <AccordionGroup>
+      <Accordion title="Глава персонала Minecraft" defaultOpen icon="cube">
+        **Линия модерации**
+
+        - Администратор Minecraft · 3–5
+          - Модератор Minecraft · 10–20
+            - Помощник Minecraft · 15–25
+              - Стажёр Minecraft · до 10
+
+        **Команда внутренних дел Minecraft**
+
+        - Инспектор Minecraft · 2–3
+        - Аналитик Minecraft · 1–2
+      </Accordion>
+
+      <Accordion title="Глава техсостава" icon="wrench">
+        | Роль | Численность |
+        | --- | --- |
+        | Архитектор | 2–3 |
+        | Билдер | 5–10 |
+        | Разработчик | 5–10 |
+        | Технический аудитор | 2–3 |
+        | Тестировщик | 3–5 |
+        | Стажёр DEV | до 10 |
+      </Accordion>
+    </AccordionGroup>
+  </Tab>
+  <Tab title="Discord">
+    <AccordionGroup>
+      <Accordion title="Глава персонала Discord" defaultOpen icon="discord">
+        **Линия модерации**
+
+        - Администратор Discord · 3–5
+          - Модератор Discord · 10–20
+            - Помощник Discord · 20–30
+              - Стажёр Discord · до 15
+
+        **Команда внутренних дел Discord**
+
+        - Аналитик Discord · 1–2
+        - Инспектор Discord · 2–3
+      </Accordion>
+    </AccordionGroup>
+  </Tab>
+</Tabs>
+
+<Note>
+  Цифры в скобках — плановая численность каждой роли. Фактическая численность может отличаться в зависимости от этапа развития проекта.
+</Note>
