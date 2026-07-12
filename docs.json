@@ -7,11 +7,6 @@
     "light": "#eec9bc",
     "dark": "#4fa1ab"
   },
-  "favicon": "/favicon.svg",
-  "logo": {
-    "light": "/images/reverieupdate-Photoroom.png",
-    "dark": "/images/reverieupdate-Photoroom.png"
-  },
   "navbar": {
     "primary": {
       "type": "button",
