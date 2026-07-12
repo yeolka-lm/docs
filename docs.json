@@ -9,8 +9,8 @@
   },
   "favicon": "/favicon.svg",
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/images/reverieupdate.png",
+    "dark": "/images/reverieupdate.png"
   },
   "navbar": {
     "primary": {
@@ -109,5 +109,8 @@
       "telegram": "https://t.me/The_ReVerie_News",
       "youtube": "https://youtube.com/@ReVerie-News"
     }
+  },
+  "thumbnails": {
+    "background": "/images/banner2Rev..png"
   }
 }
