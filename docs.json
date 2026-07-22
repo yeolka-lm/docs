@@ -91,8 +91,7 @@
             "group": "Регламент",
             "pages": [
               "staff/responsibilities",
-              "staff/arbitration",
-              "staff/commands"
+              "staff/arbitration"
             ]
           }
         ]
